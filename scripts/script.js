@@ -125,15 +125,12 @@ function updateScoreForNextRound(resultObject) {
     resultObject.gameComment = "Game Over";
     // document.querySelector(".play-btn").style.pointerEvents = "none";
     document.querySelector(".play-btn").style.cursor = "not-allowed";
+    document.querySelector(".play-btn").style.opacity = 0.65;
+    document
+      .querySelector(".play-btn")
+      .setAttribute("title", "Please restart the game");
 
-    // Checking if the user is using mobile device
-    if (window.navigator.userAgentData.mobile) {
-      document.querySelector(".play-btn").setAttribute("disabled", true);
-    } else {
-      document
-        .querySelector(".play-btn")
-        .setAttribute("title", "Please restart the game");
-    }
+    // Removing event listener
     playButton.removeEventListener("click", numberGenerationGame);
   }
 
